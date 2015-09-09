@@ -149,6 +149,7 @@ JSON-RPC κάνοντας χρήση της γλώσσας Perl. Υποθέτο�
  [academic-id-form]: https://academicid.gunet.gr/#form-of-interest "AcademicID: αίτηση ενδιαφέροντος"
 
 </div><!-- /.medium-8.columns -->
+![](/images/unsplash_windows_maselskis_302x182.jpg)
 </div><!-- /.row -->
 
 

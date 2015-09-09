@@ -127,7 +127,6 @@ REST και του γνωστού προγράμματος `curl`. Υποθέτ�
 
 > [AMKA Services JSON-RPC API Documentation][amka-jsonrpc-doc]
 
-![test](/images/unsplash_windows_maselskis_302x182.jpg) * caption *
 
 ### Παράδειγμα χρήσης με JSON-RPC με χρήση της γλώσσας Perl
 

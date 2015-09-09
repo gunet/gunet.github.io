@@ -127,6 +127,8 @@ REST και του γνωστού προγράμματος `curl`. Υποθέτ�
 
 > [AMKA Services JSON-RPC API Documentation][amka-jsonrpc-doc]
 
+![test](/images/unsplash_windows_maselskis_302x182.jpg)
+
 ### Παράδειγμα χρήσης με JSON-RPC με χρήση της γλώσσας Perl
 
 Παρακάτω θα βρείτε ένα ενδεικτικό παράδειγμα χρήσης του API μέσω της διεπαφής
@@ -149,7 +151,7 @@ JSON-RPC κάνοντας χρήση της γλώσσας Perl. Υποθέτο�
  [academic-id-form]: https://academicid.gunet.gr/#form-of-interest "AcademicID: αίτηση ενδιαφέροντος"
 
 </div><!-- /.medium-8.columns -->
-![test](/images/unsplash_windows_maselskis_302x182.jpg)
+
 </div><!-- /.row -->
 
 

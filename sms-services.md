@@ -38,6 +38,7 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
 
 
 
+curl -H "Content-Type: application/json" -X POST -d '{"username":"xyz","password":"xyz"}' http://localhost:3000/api/login
 
 
 

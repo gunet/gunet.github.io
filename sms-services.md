@@ -38,8 +38,25 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
 
 2. **DLR request** (Η κλήση αυτή γίνεται από την πλατφόρμα της GUNet προς ένα συγκεκριμένο Πανεπιστημιακό Ίδρυμα, όταν η πλατφόρμα ενημερωθεί από τον πάροχο πως ένα SMS παραδόθηκε στον τελικό χρήστη)
 
+##Παραδείγματα κλήσεων##
 
+### Παράδειγμα send SMS ###
+Το endpoint της υπηρεσίας είναι το https://sms-services.gunet.gr:9999/sendSMS
+Το request πρέπει να είναι POST και το Content Type: application/json
+Ακολουθεί ένα παράδειγμα μιας κλήσης προς την δοκιμαστική υπηρεσία gradeService.
 
+	{
+       "serviceId": "gradeService",
+       "messageId": "testMessage",
+       "replacements": [
+          "Προγραμματισμός Ι",
+          "7"
+       ],
+       "recipient": "6901234567",
+       "institution": "TEITHE",
+       "pre-shared key": "F0fesFADSr223fA",
+       "dlr-url": "https://teithe.gr/dlrs"
+    }
 
 
 

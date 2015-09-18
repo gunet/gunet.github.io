@@ -59,6 +59,7 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
     }
     
 Ακολουθούν και οι ενδεικτικες απαντήσεις της πλατφόρμας στο παραπάνω request
+
 Επιτυχές:
 
 	{
@@ -74,12 +75,14 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
         "error": "Unknown Service"
     }
 
+Παρατίθεται ένα παράδειγμα της κλήσης με curl:
+
+	 curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"serviceId": "gradeService", "messageId": "testMessage", "replacements":["Προγραμματισμός Ι","2"],"recipient": "6901234567", "institution": "TEITHE","pre-shared key": "F0fesFADSr223fA","dlr-url": "https://teithe.gr/dlrs"}'  https://sms-services.gunet.gr:9999/sendSMS 
 
 
 
 
 
-curl -H "Content-Type: application/json" -X POST -d '{"username":"xyz","password":"xyz"}' http://localhost:3000/api/login
 
 
 

@@ -123,13 +123,14 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
 Το request θα έχει την μορφή JSON με το εξής body:
 
 Επιτυχής παράδοση μηνύματος:
+
 	{
     	"serviceId": "gradeService",
         "recipient": "6901234657",
         "status": "DELIVRD"
 	}
     
-Ανεπιτυχές:
+Ανεπιτυχής παράδοση μηνύματος:
 
 	{
     	"serviceId": "gradeService",

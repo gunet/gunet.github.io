@@ -41,6 +41,8 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
 ##Παραδείγματα κλήσεων##
 
 ### Παράδειγμα send SMS ###
+Η send SMS παρέχεται από την πλατφόρμα και γίνεται consume απο τα Πανεπιστημιακά Ιδρύματα
+
 Το endpoint της υπηρεσίας είναι το https://sms-services.gunet.gr:9999/sendSMS
 Το request πρέπει να είναι POST και το Content Type: application/json
 Ακολουθεί ένα παράδειγμα μιας κλήσης προς την δοκιμαστική υπηρεσία gradeService.
@@ -79,6 +81,17 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
 
 	 curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"serviceId": "gradeService", "messageId": "testMessage", "replacements":["Προγραμματισμός Ι","2"],"recipient": "6901234567", "institution": "TEITHE","pre-shared key": "F0fesFADSr223fA","dlr-url": "https://teithe.gr/dlrs"}'  https://sms-services.gunet.gr:9999/sendSMS 
 
+
+### Παράδειγμα forward SMS ###
+
+Η forward SMS παρέχεται απο τα Πανεπιστημιακά Ιδρύματα και γίνεται consume από την πλατφόρμα
+	{
+    	"MSISDN": "6901234657",
+        "keyword": "ΒΑ",
+        "body": "ΗΛΕΚΤΡΟΝΙΚΗ",
+        "pre-shared key": "F0fesFADSr223fA",
+        "sms-forward-id": "123"
+    }
 
 
 

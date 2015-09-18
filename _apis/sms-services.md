@@ -116,7 +116,27 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
     }
 
 
+### Παράδειγμα DLR Request ###
 
+Η DLR Request παρέχεται απο τα Πανεπιστημιακά Ιδρύματα και γίνεται consume από την πλατφόρμα
+
+Το request θα έχει την μορφή JSON με το εξής body:
+
+Επιτυχής παράδοση μηνύματος:
+	{
+    	"serviceId": "gradeService",
+        "recipient": "6901234657",
+        "status": "DELIVRD"
+	}
+    
+Ανεπιτυχές:
+
+	{
+    	"serviceId": "gradeService",
+        "recipient": "6901234657",
+        "status": "ERROR",
+        "error": "80"
+    }
 
 
 

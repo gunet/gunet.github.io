@@ -44,7 +44,7 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
 Το endpoint της υπηρεσίας είναι το https://sms-services.gunet.gr:9999/sendSMS
 Το request πρέπει να είναι POST και το Content Type: application/json
 Ακολουθεί ένα παράδειγμα μιας κλήσης προς την δοκιμαστική υπηρεσία gradeService.
-
+	
 	{
        "serviceId": "gradeService",
        "messageId": "testMessage",
@@ -58,19 +58,19 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
        "dlr-url": "https://teithe.gr/dlrs"
     }
 
-
+	
 Επιτυχές:
-{
-   "serviceId": "gradeService",
-   "errorCode": "",
-   "error": ""
-}
-Ανεπιτυχές:
-{
-   "serviceId": "gradeService",
-   "errorCode": "E-002",
-   "error": "Unknown Service"
-}
+ 	{
+       "serviceId": "gradeService",
+       "errorCode": "",
+       "error": ""
+    }
+    Ανεπιτυχές:
+    {
+       "serviceId": "gradeService",
+       "errorCode": "E-002",
+       "error": "Unknown Service"
+    }
 
 
 

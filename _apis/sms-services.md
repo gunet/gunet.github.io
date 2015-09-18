@@ -57,19 +57,19 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
        "pre-shared key": "F0fesFADSr223fA",
        "dlr-url": "https://teithe.gr/dlrs"
     }
-
-	
+    
 Επιτυχές:
- 	{
-       "serviceId": "gradeService",
+
+	{
+	   "serviceId": "gradeService",
        "errorCode": "",
        "error": ""
-    }
-    Ανεπιτυχές:
-    {
-       "serviceId": "gradeService",
-       "errorCode": "E-002",
-       "error": "Unknown Service"
+	}
+Ανεπιτυχές:
+	{
+    	"serviceId": "gradeService",
+        "errorCode": "E-002",
+        "error": "Unknown Service"
     }
 
 

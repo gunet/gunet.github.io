@@ -66,6 +66,7 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
        "error": ""
 	}
 Ανεπιτυχές:
+
 	{
     	"serviceId": "gradeService",
         "errorCode": "E-002",

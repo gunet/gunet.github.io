@@ -59,6 +59,18 @@ Tα Web Service που χρησιμοποιεί η πλατφόρμα είναι
     }
 
 
+Επιτυχές:
+{
+   "serviceId": "gradeService",
+   "errorCode": "",
+   "error": ""
+}
+Ανεπιτυχές:
+{
+   "serviceId": "gradeService",
+   "errorCode": "E-002",
+   "error": "Unknown Service"
+}
 
 
 

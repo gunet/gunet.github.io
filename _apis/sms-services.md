@@ -5,10 +5,10 @@ subheadline: "API για την αποστολή και λήψη σύντομω�
 meta_teaser: "API για την αποστολή και λήψη σύντομων μηνυμάτων από και προς τα ακαδημαϊκά ιδρύματα."
 teaser: "Με το <em>SMS services</em></a> API τα ακαδημαϊκά ιδρύματα μπορούν να επικοινωνούν με τα μέλη της ακαδημαϊκής κοινότητας μέσω σύντομων μηνυμάτων (SMS) από και προς τις κινητές συσκευές τηλεφώνου."
 header:
-   image_fullwidth: "sms-splash.png"
+   image_fullwidth: "sms-splash.jpg"
 image:
-    thumb:  sms-splash.png
-    homepage: sms-splash.png
+    thumb:  sms-splash.jpg
+    homepage: sms-splash.jpg
 categories:
     - apis 
 permalink: "/apis/sms-services/"

@@ -1,3 +1,18 @@
+---
+layout: page-fullwidth
+title: "Υπηρεσίες SMS"
+subheadline: "API για την αποστολή και λήψη σύντομων μηνυμάτων"
+meta_teaser: "API για την αποστολή και λήψη σύντομων μηνυμάτων από και προς τα ακαδημαϊκά ιδρύματα."
+teaser: "Με το <em>SMS services</em></a> API τα ακαδημαϊκά ιδρύματα μπορούν να επικοινωνούν με τα μέλη της ακαδημαϊκής κοινότητας μέσω σύντομων μηνυμάτων (SMS) από και προς τις κινητές συσκευές τηλεφώνου."
+header:
+   image_fullwidth: "sms-splash.png"
+image:
+    thumb:  sms-splash.png
+    homepage: sms-splash.png
+categories:
+    - apis 
+permalink: "/apis/sms-services/"
+---
 <div class="row">
 <div class="medium-4 medium-push-8 columns" markdown="1">
 <div class="panel radius" markdown="1">

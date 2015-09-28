@@ -85,7 +85,7 @@ REST και του γνωστού προγράμματος `curl`. Υποθέτ�
      -d "birthdate=1995-01-01" \
      --data-urlencode "surname=ΧΡΗΣΤΗΣ" \
      -H "Accept: application/json" \
-     -H "Authorization: Token bce98275f18d96e773b6b04a2a0acea3"
+     -H "Authorization: Token 12345678912345678912345678912345"
 
      { "match": "true",
       "ssn": "12312312312",

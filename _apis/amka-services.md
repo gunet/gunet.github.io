@@ -79,41 +79,51 @@ permalink: "/apis/amka-services/"
 REST και του γνωστού προγράμματος `curl`. Υποθέτουμε ότι σας έχει εκχωρηθεί το μυστικό κλειδί `209802983402983049280394`
 με αναγνωριστικό ID `7`:
 
-    curl --include \
-     --header "Accept: application/vnd.collection+json" \
-     --header "Authorization: Token 209802983402983049280394" \
-     --header "X-AMKA-Token-ID: 7" \
-     'https://funhub-devel.gunet.gr/ssn/?familyName=ΠΑΠΑΔΟΠΟΥΛΟΣ&birthDate=1981-05-10&ssn=12093134234'
+    curl -v -G \
+     -X GET "https://amka-services.gunet.gr/api/rest/v1/ssn_validation" \
+     -d "ssn=12312312312" \
+     -d "birthdate=1995-01-01" \
+     --data-urlencode "surname=ΧΡΗΣΤΗΣ" \
+     -H "Accept: application/json" \
+     -H "Authorization: Token bce98275f18d96e773b6b04a2a0acea3"
 
-     {
-      "collection": {
-        "version": "1.0",
-        "items": [
-          {
-            "href": "http://funhub-devel.gunet.gr/ssn/12093134234",
-            "data": [
-              {
-                "name": "ssn",
-                "value": "12093134234"
-              },
-              {
-                "name": "birthDate",
-                "value": "1981-05-10"
-              },
-              {
-                "name": "familyName",
-                "value": "ΠΑΠΑΔΟΠΟΥΛΟΣ"
-              },
-              {
-                "name": "givenName",
-                "value": "ΚΩΝΣΤΑΝΤΙΝΟΣ"
-              },
-              ...
-            ]
-          }
-        ]
-      }
-    }
+     { "match": "true",
+      "ssn": "12312312312",
+      "father_en":"FATHERNAME",
+      "birth_country":"ΕΛΛΑΔΑ",
+      "address_prefecture":"ΑΤΤΙ",
+      "sex":"A",
+      "birth_municipality":"ΑΤΤΙΚΗ",
+      "address_country":"ΕΛΛΑΔΑ",
+      "citizenship":"ΕΛΛΑΔΑ",
+      "surname_cur_en":"USER",
+      "id_num":"XX000000",
+      "father_gr":"ΠΑΤΡΩΝΥΜΟ",
+      "tel1":"210-1234567",
+      "tel2":"210-1234568",
+      "last_mod_date":"01/01/1995",
+      "id_type":"T",
+      "surname_cur_gr":"ΧΡΗΣΤΗΣ",
+      "tid":"123654987",
+      "id_creation_year":"1995",
+      "death_date":"01/01/1995",
+      "birth_date":"01/01/1995",
+      "name_en":"TEST",
+      "address_country_code":"ΕΛ",
+      "surname_birth_gr":"ΧΡΗΣΤΗΣ",
+      "surname_birth_en":"USER",
+      "amka_cur":"12312312312",
+      "mother_en":"MOTHERNAME",
+      "mother_gr":"ΜΗΤΡΩΝΥΜΟ",
+      "death_note":"Λ",
+      "name_gr":"ΔΟΚΙΜΑΣΤΙΚΟΣ",
+      "address_town":"ΑΘΗΝΑ",
+      "amka_in":"12312312312",
+      "address_zipcode":"12345",
+      "birth_municipality_greek_code":"ΑΤΤΙ",
+      "bdate_istrue":"Π",
+      "birth_country_code":"ΕΛ",
+      "address_street":"ΠΑΝΕΠΙΣΤΗΜΙΟΥΠΟΛΗ" }
 
 
 ### Διεπαφή JSON-RPC

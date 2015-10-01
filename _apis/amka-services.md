@@ -122,6 +122,7 @@ REST και του γνωστού προγράμματος `curl`. Υποθέτ�
       "address_street":"ΠΑΝΕΠΙΣΤΗΜΙΟΥΠΟΛΗ" }
 
 ### Παράδειγμα χρήσης JAVA
+
 ```
 /*
 GUnet AMKA service java code examples.

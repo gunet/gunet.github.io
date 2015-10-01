@@ -57,9 +57,7 @@ permalink: "/apis/amka-services/"
 ## Τεκμηρίωση
 
 Το API της υπηρεσίας είναι διαθέσιμο αρχικά μέσω τεχνολογιών [JSON-RPC][] και
-[REST][]. Ακολουθεί η τεκμηρίωση για αυτές τις διεπαφές. Η τεκμηρίωση όπου είναι
-δυνατόν προκύπτει αυτόματα από τις προδιαγραφές, που βρίσκονται σε μορφή πηγαίου κώδικα,
-στο [`github.com/gunet/amka-services-specs/`][specsrepo].
+[REST][]. Ακολουθεί η τεκμηρίωση για αυτές τις διεπαφές.
 
 ### Διεπαφή REST
 
@@ -68,10 +66,9 @@ permalink: "/apis/amka-services/"
 ευκολία εξέλιξης στο μέλλον. Είναι τεχνολογία ανεξάρτητη από συγκεκριμένες
 πλατφόρμες λειτουργικών ή προγραμματιστικών περιβάλλοντων και βασίζεται
 εξ'ολοκλήρου στο πρωτόκολλο HTTP και τις αρχές [REST][]. Πλήρης τεκμηρίωση για
-την διεπαφή REST, στα Αγγλικά, καθώς και ένα διαδραστικό περιβάλλον για δοκιμές
-μπορεί να βρεθεί στην παρακάτω σελίδα:
+την διεπαφή REST, μπορεί να βρεθεί στην παρακάτω σελίδα:
 
-> [AMKA Services REST API Documentation][amka-rest-doc]
+> [επίσημος οδηγός της υπηρεσίας](https://identity.gunet.gr/sites/default/files/apidoc_gr.pdf)
 
 ### Παράδειγμα χρήσης με REST
 
@@ -123,6 +120,198 @@ REST και του γνωστού προγράμματος `curl`. Υποθέτ�
       "bdate_istrue":"Π",
       "birth_country_code":"ΕΛ",
       "address_street":"ΠΑΝΕΠΙΣΤΗΜΙΟΥΠΟΛΗ" }
+
+### Παράδειγμα χρήσης JAVA
+```
+/*
+GUnet AMKA service java code examples.
+
+Requires the Apache HTTPClient libraries.
+Available at http://hc.apache.org/downloads.cgi
+
+How to compile: javac -cp java_libs/*:. api_call.java
+How to run: java -cp java_libs/*:. api_call
+*/
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URLEncoder;
+import java.util.Arrays;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+
+public class api_call
+{
+    public static void main(String[] args) throws Exception
+    {
+        String auth_token = "bce98275f18d96e773b6b04a2a0acea3";
+        String url = "https://amka-services.gunet.gr/api/rest/v1/ssn_validation";
+        String ssn = "12312312312";
+        String birthdate = "1995-01-01";
+        String surname = "ΧΡΗΣΤΗΣ";
+        String charset = java.nio.charset.StandardCharsets.UTF_8.name();
+
+        String query = String.format("ssn=%s&birthdate=%s&surname=%s",
+                                     URLEncoder.encode(ssn, charset),
+                                     URLEncoder.encode(birthdate, charset),
+                                     URLEncoder.encode(surname, charset));
+
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpGet req = new HttpGet(url + "?" + query);
+
+        req.addHeader("content-type", "application/json");
+        req.addHeader("Authorization", "Token " + auth_token);
+
+        CloseableHttpResponse resp = null;
+        try
+        {
+            resp = httpclient.execute(req);
+
+            int code = resp.getStatusLine().getStatusCode();
+            InputStream body = resp.getEntity().getContent();
+
+            if (code != 200)
+            {
+                System.err.println("Erroneous status " + code + "for url " +
+                url + "with headers " + Arrays.toString(req.getAllHeaders()) +
+                "and parameters " + query);
+            }
+
+            BufferedReader br = new BufferedReader(
+                     new InputStreamReader((resp.getEntity().getContent())));
+
+            String output, msg="";
+            while ((output = br.readLine()) != null)
+                    msg += output;
+            System.out.println("Server reponse: " + msg);
+        }
+        catch (Exception e)
+        {
+            System.err.println("Exception occured for url " + url + "with " +
+            " headers " + Arrays.toString(req.getAllHeaders()) + "and " +
+            " parameters " + query);
+        }
+        finally
+        {
+            if (resp != null)
+                resp.close();
+        }
+    }
+}
+```
+
+### Παράδειγμα χρήσης Python
+```
+# -*- coding: utf-8 -*-
+
+'''
+GUnet AMKA service python code examples.
+
+Requires the python "requests" library.
+Available at https://github.com/kennethreitz/requests
+'''
+
+import requests
+
+def main():
+    '''The main function'''
+    auth_token = 'bce98275f18d96e773b6b04a2a0acea3'
+    url = 'https://amka-services.gunet.gr/api/rest/v1/ssn_validation'
+    params = {'ssn': '12312312312',
+              'birthdate': '1995-01-01',
+              'surname': 'ΧΡΗΣΤΗΣ'}
+    ssl_verify = False
+
+    hdrs = {'content-type': 'application/json',
+            'Authorization': 'Token %s' % (auth_token)}
+
+    try:
+        req = requests.get(url, headers=hdrs, verify=ssl_verify, params=params)
+    except requests.RequestException as req_exc:
+        print "Request exception: %s" % (req_exc)
+        return None
+    except Exception as e:
+        print "Generic exception: %s" % (e)
+        return None
+
+    #CHECK RESPONSE CODE HERE (b4 extracting data)!
+    if req.status_code != 200:
+        print ("Erroneous status %s for url %s with headers %s and parameters"
+               " %s" % (req.status_code, url, hdrs, params))
+
+    print "Server response: %s" % (req.text)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+### Παράδειγμα PHP
+```
+<?php
+/*
+GUnet AMKA service php code examples.
+
+Requires the php curl library.
+Available at http://php.net/manual/en/book.curl.php
+*/
+
+$auth_token = 'bce98275f18d96e773b6b04a2a0acea3';
+$url = 'https://amka-services.gunet.gr/api/rest/v1/ssn_validation';
+$ssn = '12312312312';
+$bdate = '1995-01-01';
+$surname = 'ΧΡΗΣΤΗΣ';
+
+
+// The data to send to the API
+$params = array(
+    'ssn' => $ssn,
+    'birthdate' => $bdate,
+    'surname' => $surname,
+);
+
+$url .= '?' . http_build_query($params);
+
+// Setup cURL
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+curl_setopt_array($ch, array(
+    CURLOPT_HTTPHEADER => array(
+        "Authorization: Token $auth_token",
+        'Content-Type: application/json'
+    ),
+));
+
+// Send the request
+$response = curl_exec($ch);
+
+// Check for errors
+if($response === FALSE){
+    die(curl_error($ch));
+}
+
+// Decode the response
+$responseData = json_decode($response, TRUE);
+
+echo "Server response:";
+var_dump($responseData);
+
+```
+
+### Παραδείγματα απαντήσεων
+Για αναλυτικά παραδείγματα απαντήσεων της υπηρεσίας, μπορείτε να δείτε τον [επίσημο οδηγό της υπηρεσίας](https://identity.gunet.gr/sites/default/files/apidoc_gr.pdf)
+
+
+
+
 
 
 ### Διεπαφή JSON-RPC

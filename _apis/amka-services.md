@@ -206,7 +206,8 @@ public class api_call
 {% endhighlight %}
 
 ### Παράδειγμα χρήσης Python
-```
+
+{% highlight python %}
 # -*- coding: utf-8 -*-
 
 '''
@@ -249,10 +250,12 @@ def main():
 if __name__ == "__main__":
     main()
 
-```
+{% endhighlight %}
+
 
 ### Παράδειγμα PHP
-```
+
+{% highlight java %}
 <?php
 /*
 GUnet AMKA service php code examples.
@@ -306,7 +309,7 @@ $responseData = json_decode($response, TRUE);
 echo "Server response:";
 var_dump($responseData);
 
-```
+{% endhighlight %}
 
 ### Παραδείγματα απαντήσεων
 Για αναλυτικά παραδείγματα απαντήσεων της υπηρεσίας, μπορείτε να δείτε τον [επίσημο οδηγό της υπηρεσίας](https://identity.gunet.gr/sites/default/files/apidoc_gr.pdf)

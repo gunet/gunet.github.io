@@ -123,7 +123,7 @@ REST και του γνωστού προγράμματος `curl`. Υποθέτ�
 
 ### Παράδειγμα χρήσης JAVA
 
-```
+{% highlight java %}
 /*
 GUnet AMKA service java code examples.
 
@@ -202,7 +202,8 @@ public class api_call
         }
     }
 }
-```
+
+{% endhighlight %}
 
 ### Παράδειγμα χρήσης Python
 ```

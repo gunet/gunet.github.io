@@ -69,7 +69,7 @@ permalink: "/apis/amka-services/"
 είναι το https://amka-services.gunet.gr . Πλήρης τεκμηρίωση για την διεπαφή
 REST, μπορεί να βρεθεί στην παρακάτω σελίδα:
 
-> [επίσημος οδηγός της υπηρεσίας](https://identity.gunet.gr/sites/default/files/apidoc_gr.pdf)
+> [επίσημος οδηγός της υπηρεσίας](https://identity.gunet.gr/sites/default/files/apidoc_gr_0.pdf)
 
 ### Παράδειγμα χρήσης με REST
 
@@ -149,7 +149,7 @@ public class api_call
 {
     public static void main(String[] args) throws Exception
     {
-        String auth_token = "bce98275f18d96e773b6b04a2a0acea3";
+        String auth_token = "12345678912345678912345678912345";
         String url = "https://amka-services.gunet.gr/api/rest/v1/ssn_validation";
         String ssn = "12312312312";
         String birthdate = "1995-01-01";
@@ -222,7 +222,7 @@ import requests
 
 def main():
     '''The main function'''
-    auth_token = 'bce98275f18d96e773b6b04a2a0acea3'
+    auth_token = '12345678912345678912345678912345'
     url = 'https://amka-services.gunet.gr/api/rest/v1/ssn_validation'
     params = {'ssn': '12312312312',
               'birthdate': '1995-01-01',
@@ -265,7 +265,7 @@ Requires the php curl library.
 Available at http://php.net/manual/en/book.curl.php
 */
 
-$auth_token = 'bce98275f18d96e773b6b04a2a0acea3';
+$auth_token = '12345678912345678912345678912345';
 $url = 'https://amka-services.gunet.gr/api/rest/v1/ssn_validation';
 $ssn = '12312312312';
 $bdate = '1995-01-01';

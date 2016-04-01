@@ -69,7 +69,7 @@ permalink: "/apis/amka-services/"
 είναι το https://amka-services.gunet.gr . Πλήρης τεκμηρίωση για την διεπαφή
 REST, μπορεί να βρεθεί στην παρακάτω σελίδα:
 
-> [επίσημος οδηγός της υπηρεσίας](https://identity.gunet.gr/sites/default/files/apidoc_gr_0.pdf)
+> [επίσημος οδηγός της υπηρεσίας](https://identity.gunet.gr/sites/default/files/apidoc_gr.pdf)
 
 ### Παράδειγμα χρήσης με REST
 
